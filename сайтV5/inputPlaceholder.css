@@ -1,0 +1,17 @@
+
+
+.inputContainerX {
+    display: contents;
+    position: relative;
+    width: 100%
+}
+
+.inputContainerX .labelX {
+    position: absolute;
+    z-index: -1;
+    left: 24px;
+    right: 0
+}
+
+
+

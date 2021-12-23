@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="ru"> 
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title></title>
+ {% include 'link_static.html' %}
+ <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+ <script src="{{ url_for('static', filename='menu.js') }}"></script>
+</head
+<body>
+ {% include 'header.html' %}
+ <div class="menu-body">
+ {% for list in product_list %}
+  <div class="menu-row">
+  {% for product in list %}
+   <div class="menu-card">
+   <img src="/static/menu/{{ product.image_filename }}" class="menu-img"
+   <p class="menu-heading">{{ product.name }}</p>
+   <p class="menu-description">{{ product.description }}</p>
+   <p class="menu-description">{{ product.price }} руб.</p
+     <div class="menu-card-bottom-area">
+     <a class="link-no-style" href="/index"> </a>
+     </div>
+	 <p class="u-text u-text-3">Имеете-ли вы свой бизнес (являетесь соучредителем)?<br>
+          <br><label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+   Да
+</label>
+
+<br><label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+  Нет
+</label>
+          <br>
+	 </p>
+	 <p>
+          <br>&nbsp;Хотели бы вы стать предпринимателем? <br>
+          <br><label class="radio">
+  <input type="radio" name="optionsRadios1" id="optionsRadios3" value="option3" checked>
+   Да
+</label>
+<br><label class="radio">
+  <input type="radio" name="optionsRadios1" id="optionsRadios4" value="option4">
+  Нет
+</label>
+          <br><!--[if !supportLists]--><!--[endif]-->
+        let text = JSON.stringify({hello:'example'});
+downloadAsFile(text);
+
+function downloadAsFile(data) {
+  let a = document.createElement("a");
+  let file = new Blob([data], {type: 'application/json'});
+  a.href = URL.createObjectURL(file);
+  a.download = "example.txt";
+  a.click();
+}</p>
+   </div>
+  {% endfor %}
+ </div>
+ {% endfor %}
+ </div>
+ {% include 'footer.html' %}
+</body>
+</html> 
